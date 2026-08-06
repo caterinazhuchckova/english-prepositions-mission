@@ -3,22 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Three A1 English games for practising prepositions of place.">
-  <title>English Prepositions Games — Katerina Zhuchkova</title>
+  <meta name="description" content="Gamified A1 English space missions for practising prepositions of place.">
+  <title>English Prepositions Space Missions — Katerina Zhuchkova</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div id="app">
     <header class="site-header">
-      <button id="homeBtn" class="icon-btn hidden" type="button" aria-label="Return to main menu">← <span>Main menu</span></button>
+      <button id="homeBtn" class="icon-btn hidden" type="button" aria-label="Return to mission map">← <span>Mission map</span></button>
+
       <div class="brand">
         <img src="assets/images/site_logo.png" alt="Katerina Zhuchkova" class="brand-logo"
              onerror="this.classList.add('hidden'); document.querySelector('.brand-fallback').classList.remove('hidden')">
         <div class="brand-fallback hidden">
           <strong>Katerina Zhuchkova</strong>
-          <span>English Prepositions Games</span>
+          <span>English Prepositions Space Missions</span>
         </div>
       </div>
+
       <div class="header-actions">
         <button id="musicBtn" class="icon-btn" type="button" aria-pressed="true" title="Background music">♫ <span>Music</span></button>
         <button id="soundsBtn" class="icon-btn" type="button" aria-pressed="true" title="Game sounds">🔊 <span>Sounds</span></button>
@@ -29,55 +31,141 @@
     <main>
       <section id="homeScreen" class="screen active" aria-labelledby="homeTitle">
         <div class="hero">
-          <span class="level-badge">LEVEL A1</span>
+          <span class="level-badge">LEVEL A1 · SPACE MISSION</span>
           <h1 id="homeTitle">English Prepositions Games</h1>
-          <p>Learn <em>in, on, under, behind, next to, in front of, between</em> and <em>near</em> through three interactive games.</p>
+          <p>Help the cat complete three space missions and become a <strong>Preposition Master!</strong></p>
         </div>
 
-        <div class="game-grid">
-          <article class="game-card">
-            <img src="assets/images/cover_sentence_builder.png" alt="Sentence Builder game">
+        <section class="mission-progress-panel" aria-labelledby="missionProgressTitle">
+          <div class="mission-progress-copy">
+            <span class="mission-kicker">MISSION MAP</span>
+            <h2 id="missionProgressTitle">Space Mission Progress</h2>
+            <p id="progressMessage">Complete Mission 1 to open the next mission.</p>
+          </div>
+
+          <div class="progress-stats">
+            <div><strong id="completedMissions">0 / 3</strong><span>Missions</span></div>
+            <div><strong id="totalStars">0 / 9</strong><span>Stars</span></div>
+            <div><strong id="totalBadges">0 / 3</strong><span>Badges</span></div>
+          </div>
+
+          <div class="progress-track" aria-label="Overall mission progress">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+
+          <div class="mission-map-actions">
+            <button id="teacherUnlockBtn" class="secondary-btn" type="button">🔓 Teacher mode: unlock all</button>
+            <button id="resetProgressBtn" class="ghost-btn" type="button">Reset progress</button>
+          </div>
+        </section>
+
+        <div class="game-grid mission-grid">
+          <article class="game-card mission-card" data-mission-card="sentence">
+            <div class="mission-ribbon">MISSION 1</div>
+            <div class="mission-lock hidden" data-lock="sentence">🔒</div>
+            <img src="assets/images/cover_sentence_builder.png" alt="Sentence Builder mission">
             <div class="game-card-body">
-              <div class="card-heading"><h2>Sentence Builder</h2><span class="mini-badge">A1</span></div>
-              <p>Look at the picture and put the sentence parts in the correct order.</p>
+              <div class="card-heading">
+                <h2>Sentence Builder</h2>
+                <span class="mini-badge">A1</span>
+              </div>
+              <p class="mission-name">Repair the Sentence Console</p>
+              <p>Build correct sentences to restore the language console.</p>
+              <div class="card-stars" data-stars="sentence" aria-label="No stars yet">☆☆☆</div>
+              <div class="mission-reward">Reward: <strong>Sentence Star badge</strong></div>
               <div class="card-actions">
-                <button class="primary-btn" data-open-game="sentence">Play</button>
+                <button class="primary-btn" data-open-game="sentence">Start mission</button>
                 <button class="secondary-btn" data-open-rules="sentence">How to play</button>
               </div>
             </div>
           </article>
 
-          <article class="game-card">
-            <img src="assets/images/cover_picture_shooter.png" alt="Picture Shooter game">
+          <article class="game-card mission-card" data-mission-card="shooter">
+            <div class="mission-ribbon">MISSION 2</div>
+            <div class="mission-lock" data-lock="shooter">🔒</div>
+            <img src="assets/images/cover_picture_shooter.png" alt="Picture Shooter mission">
             <div class="game-card-body">
-              <div class="card-heading"><h2>Picture Shooter</h2><span class="mini-badge">A1</span></div>
-              <p>Read the preposition and shoot the correct picture.</p>
+              <div class="card-heading">
+                <h2>Picture Shooter</h2>
+                <span class="mini-badge">A1</span>
+              </div>
+              <p class="mission-name">Restore the Location Map</p>
+              <p>Read the phrase and hit the picture that shows the correct location.</p>
+              <div class="card-stars" data-stars="shooter" aria-label="No stars yet">☆☆☆</div>
+              <div class="mission-reward">Reward: <strong>Picture Hunter badge</strong></div>
               <div class="card-actions">
-                <button class="primary-btn" data-open-game="shooter">Play</button>
+                <button class="primary-btn" data-open-game="shooter">Locked</button>
                 <button class="secondary-btn" data-open-rules="shooter">How to play</button>
               </div>
             </div>
           </article>
 
-          <article class="game-card">
-            <img src="assets/images/cover_type_preposition.png" alt="Type the Preposition game">
+          <article class="game-card mission-card" data-mission-card="typing">
+            <div class="mission-ribbon">MISSION 3</div>
+            <div class="mission-lock" data-lock="typing">🔒</div>
+            <img src="assets/images/cover_type_preposition.png" alt="Type the Preposition mission">
             <div class="game-card-body">
-              <div class="card-heading"><h2>Type the Preposition</h2><span class="mini-badge">A1</span></div>
-              <p>Look at the picture and type the missing preposition.</p>
+              <div class="card-heading">
+                <h2>Type the Preposition</h2>
+                <span class="mini-badge">A1</span>
+              </div>
+              <p class="mission-name">Enter the Secret Words</p>
+              <p>Listen, look and type the missing preposition to finish the flight.</p>
+              <div class="card-stars" data-stars="typing" aria-label="No stars yet">☆☆☆</div>
+              <div class="mission-reward">Reward: <strong>Preposition Master badge</strong></div>
               <div class="card-actions">
-                <button class="primary-btn" data-open-game="typing">Play</button>
+                <button class="primary-btn" data-open-game="typing">Locked</button>
                 <button class="secondary-btn" data-open-rules="typing">How to play</button>
               </div>
             </div>
           </article>
         </div>
+
+        <section class="achievement-section" aria-labelledby="achievementTitle">
+          <div class="section-heading">
+            <span class="mission-kicker">ACHIEVEMENTS</span>
+            <h2 id="achievementTitle">Mission Badges</h2>
+          </div>
+          <div class="badge-grid">
+            <article class="achievement-badge" data-badge="sentence">
+              <div class="badge-icon">🧩</div>
+              <strong>Sentence Star</strong>
+              <span>Complete Mission 1</span>
+            </article>
+            <article class="achievement-badge" data-badge="shooter">
+              <div class="badge-icon">🎯</div>
+              <strong>Picture Hunter</strong>
+              <span>Complete Mission 2</span>
+            </article>
+            <article class="achievement-badge" data-badge="typing">
+              <div class="badge-icon">🚀</div>
+              <strong>Preposition Master</strong>
+              <span>Complete Mission 3</span>
+            </article>
+          </div>
+        </section>
+
+        <section id="masterBanner" class="master-banner hidden" aria-live="polite">
+          <div class="master-crown">🏆</div>
+          <div>
+            <span>ALL MISSIONS COMPLETED</span>
+            <h2>You are a Preposition Master!</h2>
+            <p>Replay missions to collect all 9 stars and improve your best combo.</p>
+          </div>
+        </section>
       </section>
 
       <section id="setupScreen" class="screen" aria-labelledby="setupTitle">
         <div class="setup-card">
-          <span class="level-badge">LEVEL A1</span>
-          <h1 id="setupTitle">Game setup</h1>
+          <span id="setupMissionLabel" class="level-badge">MISSION 1 · LEVEL A1</span>
+          <h1 id="setupTitle">Mission setup</h1>
           <p id="setupDescription"></p>
+
+          <div class="mission-briefing">
+            <span>MISSION BRIEFING</span>
+            <strong id="setupMissionText"></strong>
+            <p id="setupReward"></p>
+          </div>
 
           <fieldset>
             <legend>Difficulty</legend>
@@ -98,9 +186,9 @@
           </fieldset>
 
           <div class="setup-actions">
-            <button id="startGameBtn" class="primary-btn large-btn">Start game</button>
+            <button id="startGameBtn" class="primary-btn large-btn">Start mission</button>
             <button id="setupRulesBtn" class="secondary-btn large-btn">How to play</button>
-            <button id="setupMenuBtn" class="ghost-btn large-btn">Main menu</button>
+            <button id="setupMenuBtn" class="ghost-btn large-btn">Mission map</button>
           </div>
         </div>
       </section>
@@ -109,7 +197,7 @@
         <div class="game-shell">
           <div class="game-title-row">
             <div>
-              <span class="mini-badge">A1</span>
+              <span id="gameMissionBadge" class="mini-badge">MISSION 1 · A1</span>
               <h1 id="gameTitle">Game</h1>
             </div>
             <button id="pauseBtn" class="secondary-btn compact-btn">Pause</button>
@@ -120,31 +208,45 @@
             <div><span>Round</span><strong id="roundValue">1 / 8</strong></div>
             <div><span>Lives</span><strong id="livesValue" aria-label="3 lives">♥ ♥ ♥</strong></div>
             <div><span>Time</span><strong id="timeValue">30</strong></div>
+            <div class="combo-stat"><span>Combo</span><strong id="comboValue">×0</strong></div>
           </div>
 
+          <div id="comboBanner" class="combo-banner hidden" aria-live="polite"></div>
           <div id="gameArea" class="game-area"></div>
 
           <div class="game-footer-actions">
-            <button id="restartBtn" class="ghost-btn">Restart</button>
-            <button id="gameMenuBtn" class="ghost-btn">Main menu</button>
+            <button id="restartBtn" class="ghost-btn">Restart mission</button>
+            <button id="gameMenuBtn" class="ghost-btn">Mission map</button>
           </div>
         </div>
       </section>
 
       <section id="resultScreen" class="screen" aria-labelledby="resultTitle">
         <div class="result-card">
+          <span id="resultMissionLabel" class="level-badge">MISSION COMPLETED</span>
           <div id="resultStars" class="stars" aria-hidden="true">★★★</div>
-          <h1 id="resultTitle">Game completed!</h1>
+          <h1 id="resultTitle">Mission completed!</h1>
+          <p id="resultMessage" class="result-message"></p>
+
           <div class="result-grid">
             <div><span>Score</span><strong id="resultScore">0</strong></div>
             <div><span>Correct</span><strong id="resultCorrect">0 / 8</strong></div>
             <div><span>Mistakes</span><strong id="resultMistakes">0</strong></div>
             <div><span>Best score</span><strong id="resultBest">0</strong></div>
+            <div><span>Best combo</span><strong id="resultCombo">×0</strong></div>
+            <div><span>Total stars</span><strong id="resultTotalStars">0 / 9</strong></div>
           </div>
+
+          <div id="badgeUnlocked" class="badge-unlocked hidden">
+            <span>NEW BADGE UNLOCKED</span>
+            <div id="badgeUnlockedIcon" class="badge-unlocked-icon">🏅</div>
+            <strong id="badgeUnlockedName">Mission badge</strong>
+          </div>
+
           <div class="setup-actions">
             <button id="playAgainBtn" class="primary-btn large-btn">Play again</button>
-            <button id="nextGameBtn" class="secondary-btn large-btn">Next game</button>
-            <button id="resultMenuBtn" class="ghost-btn large-btn">Main menu</button>
+            <button id="nextGameBtn" class="secondary-btn large-btn">Next mission</button>
+            <button id="resultMenuBtn" class="ghost-btn large-btn">Mission map</button>
           </div>
         </div>
       </section>
@@ -161,15 +263,15 @@
   </dialog>
 
   <dialog id="pauseDialog" class="modal small-modal">
-    <h2>Game paused</h2>
+    <h2>Mission paused</h2>
     <p>The timer is stopped.</p>
-    <button id="resumeBtn" class="primary-btn large-btn">Continue</button>
-    <button id="pauseMenuBtn" class="ghost-btn large-btn">Main menu</button>
+    <button id="resumeBtn" class="primary-btn large-btn">Continue mission</button>
+    <button id="pauseMenuBtn" class="ghost-btn large-btn">Mission map</button>
   </dialog>
 
   <dialog id="confirmDialog" class="modal small-modal">
-    <h2>Return to the main menu?</h2>
-    <p>Your current progress will be lost.</p>
+    <h2>Return to the mission map?</h2>
+    <p>Your current mission progress will be lost.</p>
     <div class="confirm-actions">
       <button id="confirmExitBtn" class="danger-btn">Yes, exit</button>
       <button id="cancelExitBtn" class="secondary-btn">Cancel</button>

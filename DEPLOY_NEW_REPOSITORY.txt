@@ -1,0 +1,27 @@
+КАК ВЫЛОЖИТЬ САМОСТОЯТЕЛЬНУЮ ИГРУ В НОВЫЙ РЕПОЗИТОРИЙ
+
+1. Добавьте 32 MP3-файла в папку:
+   assets/sounds
+
+2. Создайте новый PUBLIC repository на GitHub.
+
+3. Перетащите в него всё содержимое этой папки:
+   assets
+   css
+   js
+   .nojekyll
+   AUDIO_FILES_TO_ADD.txt
+   GAME_SPEC.md
+   README.md
+   index.html
+
+4. Нажмите Commit changes.
+
+5. Откройте Settings → Pages:
+   Source: Deploy from a branch
+   Branch: main
+   Folder: / (root)
+
+6. Нажмите Save.
+
+Эта версия полностью самостоятельная и не использует файлы старого репозитория.
