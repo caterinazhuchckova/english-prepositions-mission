@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#182958"/><stop offset=".52" stop-color="#304a80"/><stop offset="1" stop-color="#523f7e"/></linearGradient>
+  <radialGradient id="planet"><stop stop-color="#8eeaff"/><stop offset=".55" stop-color="#4ab9ee"/><stop offset="1" stop-color="#3768d4"/></radialGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8d3eb"/><stop offset="1" stop-color="#9a92c6"/></linearGradient>
+  <linearGradient id="platform" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#81e4ff"/><stop offset="1" stop-color="#4f8de6"/></linearGradient>
+  <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfdff"/><stop offset="1" stop-color="#d7e8f4"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c7f5ff"/><stop offset="1" stop-color="#62c6ea"/></linearGradient>
+  <linearGradient id="door" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8be6ff"/><stop offset="1" stop-color="#5994e6"/></linearGradient>
+  <linearGradient id="flag" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffd66f"/><stop offset="1" stop-color="#ff93c8"/></linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#07162f" flood-opacity=".22"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="960" height="560" rx="34" fill="url(#sky)"/>
+<g opacity=".88">
+  <circle cx="116" cy="105" r="54" fill="url(#planet)"/><ellipse cx="116" cy="105" rx="77" ry="17" fill="none" stroke="#abf3ff" stroke-width="9" opacity=".65"/>
+  <circle cx="820" cy="100" r="30" fill="#b78cf7"/><circle cx="793" cy="86" r="7" fill="#e6d3ff" opacity=".55"/>
+  <circle cx="230" cy="75" r="3" fill="#fff"/><circle cx="320" cy="120" r="4" fill="#fff7bb"/><circle cx="690" cy="72" r="3" fill="#fff"/><circle cx="760" cy="180" r="4" fill="#fff7bb"/><circle cx="560" cy="98" r="3" fill="#fff"/>
+</g>
+<path d="M0 410c125-52 239-34 350-3 127 35 235 25 344-9 111-35 194-24 266 8v154H0z" fill="url(#ground)"/>
+<ellipse cx="480" cy="482" rx="290" ry="54" fill="#665c98" opacity=".18"/>
+
+
+      <g id="foundation" filter="url(#soft)">
+        <ellipse cx="480" cy="478" rx="170" ry="33" fill="#5dd8ff" opacity=".28"/>
+        <rect x="365" y="438" width="230" height="34" rx="17" fill="url(#platform)"/>
+        <rect x="395" y="426" width="170" height="20" rx="10" fill="#dff8ff" opacity=".9"/>
+      </g>
+      <g id="main-body" filter="url(#soft)">
+        <rect x="405" y="300" width="150" height="150" rx="42" fill="url(#body)" stroke="#b9d8ea" stroke-width="4"/>
+        <path d="M420 370h120" stroke="#d9eef8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M480 315v120" stroke="#edf9ff" stroke-width="3" opacity=".8"/>
+      </g>
+      <g id="dome" filter="url(#soft)">
+        <path d="M430 310c0-78 100-78 100 0z" fill="url(#glass)" stroke="#8bcde9" stroke-width="4"/>
+        <ellipse cx="480" cy="301" rx="38" ry="11" fill="#f5fdff" opacity=".65"/>
+      </g>
+      <g id="door" filter="url(#soft)">
+        <rect x="458" y="366" width="44" height="82" rx="20" fill="url(#door)" stroke="#6fb9da" stroke-width="3"/>
+        <circle cx="490" cy="406" r="4" fill="#fff9b7"/>
+      </g>
+      <g id="left-module" filter="url(#soft)">
+        <rect x="315" y="340" width="108" height="88" rx="30" fill="url(#body)" stroke="#b9d8ea" stroke-width="4"/>
+        <rect x="330" y="357" width="55" height="32" rx="16" fill="url(#glass)"/>
+        <path d="M423 382h-30" stroke="#8bdcf4" stroke-width="8" stroke-linecap="round"/>
+      </g>
+      <g id="right-module" filter="url(#soft)">
+        <rect x="537" y="340" width="108" height="88" rx="30" fill="url(#body)" stroke="#b9d8ea" stroke-width="4"/>
+        <rect x="575" y="357" width="55" height="32" rx="16" fill="url(#glass)"/>
+        <path d="M537 382h30" stroke="#8bdcf4" stroke-width="8" stroke-linecap="round"/>
+      </g>
+      <g id="lights" filter="url(#glow)">
+        <circle cx="440" cy="350" r="13" fill="#76e5ff"/>
+        <circle cx="520" cy="350" r="13" fill="#76e5ff"/>
+        <circle cx="346" cy="402" r="8" fill="#ffd874"/>
+        <circle cx="614" cy="402" r="8" fill="#ffd874"/>
+      </g>
+      <g id="antenna" filter="url(#soft)">
+        <rect x="476" y="214" width="8" height="54" rx="4" fill="#84a8bd"/>
+        <circle cx="480" cy="211" r="9" fill="#ffd36c"/>
+        <path d="M452 225c16-16 40-16 56 0" fill="none" stroke="#7be2ff" stroke-width="4" stroke-linecap="round"/>
+        <path d="M442 214c22-24 54-24 76 0" fill="none" stroke="#7be2ff" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+      </g>
+      <g id="garden-finale">
+        <g filter="url(#soft)">
+          <ellipse cx="300" cy="457" rx="78" ry="22" fill="#8de5b4"/>
+          <path d="M272 449c-10-26 16-34 23-10 8-27 34-17 23 8 23-10 33 17 8 25h-52c-24-8-21-24-2-23z" fill="#73cf9d"/>
+          <circle cx="284" cy="451" r="7" fill="#ffcc73"/><circle cx="310" cy="447" r="6" fill="#d8a2ff"/>
+          <rect x="674" y="400" width="7" height="70" rx="3" fill="#86a8b8"/>
+          <path d="M681 404h48l-15 18 15 18h-48z" fill="url(#flag)"/>
+        </g>
+        <g filter="url(#glow)">
+          <ellipse cx="480" cy="476" rx="210" ry="46" fill="#7de5ff" opacity=".24"/>
+          <circle cx="742" cy="142" r="7" fill="#ffe99c"/>
+          <circle cx="204" cy="168" r="6" fill="#ffe99c"/>
+          <circle cx="695" cy="248" r="5" fill="#fff"/>
+        </g>
+        <text x="480" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ecfaff">COSMIC HOME COMPLETE!</text>
+      </g>
+</svg>

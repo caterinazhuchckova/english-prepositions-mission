@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English Prepositions — Cosmic Mission</title>
+  <meta name="description" content="Three A1 English prepositions games with a visual cosmic-house progress tracker.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button id="homeBtn" class="top-btn hidden" type="button">← Mission map</button>
+    <div class="brand"><img class="brand-logo" src="assets/images/site_logo.png" alt="Katerina Zhuchkova"><div class="brand-title"><strong>Cosmic Mission</strong><small>English Prepositions · A1</small></div></div>
+    <div class="top-actions">
+      <button id="soundsBtn" class="top-btn" type="button" aria-pressed="true">🔊 Sounds</button>
+      <button id="resetBtn" class="top-btn" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main class="viewport-main">
+    <section id="homeScreen" class="screen active home-screen">
+      <div class="home-left glass-card">
+        <div class="home-heading">
+          <div><span class="kicker">VISUAL PROGRESS TRACKER</span><h1>Build your cosmic home</h1><p id="progressText">Complete missions and the picture will grow.</p></div>
+          <div class="progress-pill"><strong id="overallPercent">0%</strong><span>complete</span></div>
+        </div>
+        <div class="house-frame"><img id="houseImage" src="assets/tracker/house_stage_0.svg" alt="Cosmic house progress"></div>
+        <div class="progress-row"><div class="progress-track"><div id="progressFill" class="progress-fill"></div></div><strong id="partsText">0 / 9 parts</strong></div>
+        <div class="metric-row">
+          <div><span>Missions</span><strong id="missionMetric">0 / 3</strong></div>
+          <div><span>Stars</span><strong id="starMetric">0 / 9</strong></div>
+          <div><span>Next</span><strong id="nextMetric">Mission 1</strong></div>
+        </div>
+      </div>
+
+      <div class="home-right">
+        <div class="mission-intro glass-card"><span class="kicker">MISSION MAP</span><h2>Three space missions</h2><p>Finish one mission to unlock the next.</p></div>
+        <div id="missionCards" class="mission-list"></div>
+      </div>
+    </section>
+
+    <section id="setupScreen" class="screen centered-screen">
+      <div class="setup-card glass-card">
+        <span id="setupKicker" class="kicker">MISSION 1</span>
+        <h1 id="setupTitle">Sentence Builder</h1>
+        <p id="setupDesc"></p>
+        <div class="brief-box"><span>OBJECTIVE</span><strong id="setupObjective"></strong><small id="setupReward"></small></div>
+        <div class="setup-tracker"><img id="setupHouse" src="assets/tracker/house_stage_0.svg" alt="Current cosmic house"><div><strong id="setupStars">0 / 9 stars</strong><span>Your current build before the mission.</span></div></div>
+        <div class="button-row"><button id="startBtn" class="primary-btn">Start mission</button><button id="setupBackBtn" class="secondary-btn">Mission map</button></div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen">
+      <div class="game-shell glass-card">
+        <div class="game-head">
+          <div><span id="gameKicker" class="kicker">MISSION 1</span><h1 id="gameTitle">Sentence Builder</h1></div>
+          <div class="compact-stats"><div><span>Round</span><strong id="roundStat">1 / 8</strong></div><div><span>Score</span><strong id="scoreStat">0</strong></div><div><span>Correct</span><strong id="correctStat">0</strong></div><div><span>Stars</span><strong id="liveStarsStat">0 / 3</strong></div></div>
+        </div>
+        <div class="mini-progress"><div class="progress-track"><div id="roundFill" class="progress-fill"></div></div><strong id="roundPercent">0%</strong></div>
+        <div id="gameArea" class="game-area"></div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen centered-screen">
+      <div class="result-card glass-card">
+        <span id="resultKicker" class="kicker">MISSION COMPLETE</span>
+        <h1 id="resultTitle">Mission complete!</h1>
+        <div id="resultStars" class="result-stars">★★★</div>
+        <p id="resultMessage"></p>
+        <div class="result-grid"><div><span>Correct</span><strong id="resultCorrect">0 / 8</strong></div><div><span>Score</span><strong id="resultScore">0</strong></div><div><span>Mission stars</span><strong id="resultMissionStars">0 / 3</strong></div><div><span>Total stars</span><strong id="resultTotalStars">0 / 9</strong></div></div>
+        <div class="result-build"><img id="resultHouse" src="assets/tracker/house_stage_0.svg" alt="Updated cosmic house"><p id="resultBuildText"></p></div>
+        <div class="button-row"><button id="againBtn" class="primary-btn">Play again</button><button id="nextBtn" class="secondary-btn">Next mission</button><button id="resultMapBtn" class="ghost-btn">Mission map</button></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
